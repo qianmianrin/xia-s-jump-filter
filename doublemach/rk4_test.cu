@@ -385,7 +385,7 @@ __global__ void compute_damp_coeffs_kernel(Element *d_Mesh, Element *d_Ghost_bot
 
     d_damp_local[idx][0] = max_contrib[0];
     double running_sum = max_contrib[0];
-    for (int l = 0; l <= 3; l++) {
+    for (int l = 1; l <= 3; l++) {
         running_sum += max_contrib[l];
         d_damp_local[idx][l] = running_sum;
     }
